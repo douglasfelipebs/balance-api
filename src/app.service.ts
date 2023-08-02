@@ -4,10 +4,13 @@ import { Account } from './types/Account'
 import { EventRequest } from './types/EventRequest'
 import { EventTypeEnum } from './types/EventTypeEnum'
 
-const accounts: Account[] = []
+let accounts: Account[] = []
 
 @Injectable()
 export class AppService {
+  reset() {
+    accounts = []
+  }
   getAccount(account_id: string): Account {
     return accounts.find((account) => account.id === account_id)
   }
