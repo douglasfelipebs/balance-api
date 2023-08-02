@@ -43,7 +43,7 @@ export class AppController {
   @Post('/reset')
   reset(@Res({ passthrough: true }) res: Response): void {
     this.appService.reset()
-    res.status(HttpStatus.OK)
+    res.status(HttpStatus.OK).send('OK')
     return
   }
 }
